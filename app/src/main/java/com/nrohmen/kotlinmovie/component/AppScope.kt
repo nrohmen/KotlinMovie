@@ -1,4 +1,4 @@
-package com.nrohmen.kotlinmovie.main
+package com.nrohmen.kotlinmovie.component
 
 import javax.inject.Scope
 
@@ -7,4 +7,4 @@ import javax.inject.Scope
  */
 @Scope
 @Retention(AnnotationRetention.RUNTIME)
-annotation class MainScope
+annotation class AppScope

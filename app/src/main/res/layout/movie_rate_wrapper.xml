@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:id="@+id/destination_name"
+                android:paddingBottom="2dip"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_marginRight="60dip"
+                android:maxLines="1"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:layout_marginEnd="60dip" />
+
+            <TextView
+                android:id="@+id/city_name"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:gravity="top"
+                android:layout_width="wrap_content"
+                android:layout_height="25dip"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom|end"
+            app:srcCompat="@drawable/ic_favorite_border"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.nrohmen.kotlinmovie.main
 
 import com.nrohmen.kotlinmovie.api.MovieDbApi
+import com.nrohmen.kotlinmovie.component.AppScope
 import dagger.Module
 import dagger.Provides
 
@@ -15,7 +16,7 @@ class MainModule{
     }
 
     @Provides
-    @MainScope
+    @AppScope
     fun provideMainInteractor(api : MovieDbApi): MainInteractor{
         return MainInteractorImpl(api)
     }

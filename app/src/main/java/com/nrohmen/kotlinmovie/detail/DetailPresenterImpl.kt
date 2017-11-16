@@ -1,7 +1,7 @@
-package com.nrohmen.kotlinmovie.main
+package com.nrohmen.kotlinmovie.detail
 
 import android.util.Log
-import com.nrohmen.kotlinmovie.api.MovieResponse
+import com.nrohmen.kotlinmovie.models.MovieDetail
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
@@ -9,15 +9,15 @@ import rx.schedulers.Schedulers
 /**
  * Created by root on 11/15/17.
  */
-class MainPresenterImpl(val interactor: MainInteractor, private var view: MainView?): MainPresenter{
+class DetailPresenterImpl(val interactor: DetailInteractor, private var view: DetailView?): DetailPresenter{
 
-    override fun setView(mainView: MainView) {
+    override fun setView(mainView: DetailView, id: String) {
         view = mainView
-        getListMovies()
+        getListMovies(id)
     }
 
-    private fun getListMovies(){
-        interactor.getDiscoverMovies()
+    private fun getListMovies(id: String){
+        interactor.getMovieDetails(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -30,7 +30,7 @@ class MainPresenterImpl(val interactor: MainInteractor, private var view: MainVi
         Log.e(e?.message, e?.stackTrace.toString())
     }
 
-    private fun onGetMoviesSuccess(moviesResponse: MovieResponse?) {
-        view?.showDiscoverMovies(moviesResponse?.movies)
+    private fun onGetMoviesSuccess(moviesResponse: MovieDetail?) {
+        view?.showDiscoverMovies(moviesResponse)
     }
 }

@@ -3,6 +3,7 @@ package com.nrohmen.kotlinmovie.main
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.nrohmen.kotlinmovie.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,14 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setToolbar()
-        loadListingFragment(savedInstanceState)
+        loadMainFragment(savedInstanceState)
     }
 
     private fun setToolbar() {
+        setSupportActionBar(toolbar)
         supportActionBar?.title = getString(R.string.app_name)
     }
 
-    private fun loadListingFragment(savedInstanceState: Bundle?) {
+    private fun loadMainFragment(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()

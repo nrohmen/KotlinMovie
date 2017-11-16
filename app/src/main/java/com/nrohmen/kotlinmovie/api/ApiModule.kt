@@ -13,7 +13,7 @@ import javax.inject.Singleton
         class ApiModule{
     @Provides @Singleton @Named("baseUrl")
     fun provideBaeUrl(): String{
-        return "http://api.themoviedb.org/"
+        return "http://api.themoviedb.org/3/"
     }
 
     @Provides @Singleton

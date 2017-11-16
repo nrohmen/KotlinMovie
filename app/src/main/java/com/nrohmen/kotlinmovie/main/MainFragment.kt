@@ -43,10 +43,10 @@ class MainFragment : Fragment(), MainView {
         val layoutManager = GridLayoutManager(context, 2)
         list_movie.layoutManager = layoutManager
         list_movie.setHasFixedSize(true)
-        list_movie.adapter = MainAdapter()
+        list_movie.adapter = MainAdapter(context)
     }
 
-    override fun showMovies(movies: List<Movie>?) {
+    override fun showDiscoverMovies(movies: List<Movie>?) {
         (list_movie.adapter as MainAdapter).addMovies(movies)
     }
 }

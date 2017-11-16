@@ -1,6 +1,8 @@
 package com.nrohmen.kotlinmovie.component
 
 import android.app.Application
+import com.nrohmen.kotlinmovie.detail.DetailComponent
+import com.nrohmen.kotlinmovie.detail.DetailModule
 import com.nrohmen.kotlinmovie.main.MainComponent
 import com.nrohmen.kotlinmovie.main.MainModule
 import com.nrohmen.kotlinmovie.network.NetworkModule
@@ -11,6 +13,7 @@ import com.nrohmen.kotlinmovie.network.NetworkModule
 class App : Application(){
     lateinit var appComponent : AppComponent
     lateinit var mainComponent : MainComponent
+    lateinit var detailComponent : DetailComponent
 
     override fun onCreate() {
         super.onCreate()
@@ -26,6 +29,11 @@ class App : Application(){
     fun createMainComponent(): MainComponent{
         mainComponent = appComponent.plus(MainModule())
         return mainComponent
+    }
+
+    fun createDetailComponent(): DetailComponent{
+        detailComponent = appComponent.plus(DetailModule())
+        return detailComponent
     }
 
     fun releaseMainComponent(){

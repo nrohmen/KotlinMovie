@@ -7,5 +7,5 @@ import rx.Observable
  * Created by root on 11/15/17.
  */
 interface MainInteractor{
-    fun getListMovies(): Observable<MovieResponse>
+    fun getDiscoverMovies(): Observable<MovieResponse>
 }

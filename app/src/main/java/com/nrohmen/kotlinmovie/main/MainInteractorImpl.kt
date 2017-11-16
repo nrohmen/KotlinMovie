@@ -8,14 +8,14 @@ import rx.Observable
  * Created by root on 11/15/17.
  */
 class MainInteractorImpl(val movieDbApi: MovieDbApi): MainInteractor{
-    override fun getListMovies(): Observable<MovieResponse>{
-        return movieDbApi.getVenues(createQueryMap())
+    override fun getDiscoverMovies(): Observable<MovieResponse> {
+        return movieDbApi.getDiscoverMovie(createQueryMap())
     }
 
     private fun createQueryMap(): Map<String, String>{
         return hashMapOf(
                 "language" to "en",
-                "sort_bay" to "popularity.desc"
+                "sort_by" to "popularity.desc"
         )
     }
 }
