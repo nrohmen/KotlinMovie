@@ -31,6 +31,6 @@ class DetailPresenterImpl(val interactor: DetailInteractor, private var view: De
     }
 
     private fun onGetMoviesSuccess(moviesResponse: MovieDetail?) {
-        view?.showDiscoverMovies(moviesResponse)
+        view?.showMovieDetails(moviesResponse)
     }
 }

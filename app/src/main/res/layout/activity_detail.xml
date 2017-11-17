@@ -43,7 +43,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="70dip" />
 
-            <include layout="@layout/movie_rate_wrapper" />
+            <include layout="@layout/movie_wrapper" />
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"

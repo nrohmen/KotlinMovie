@@ -7,5 +7,5 @@ import com.nrohmen.kotlinmovie.models.MovieDetail
  * Created by root on 11/15/17.
  */
 interface DetailView {
-    fun showDiscoverMovies(movies : MovieDetail?)
+    fun showMovieDetails(movies : MovieDetail?)
 }
