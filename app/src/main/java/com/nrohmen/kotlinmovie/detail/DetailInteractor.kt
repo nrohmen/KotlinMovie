@@ -1,5 +1,6 @@
 package com.nrohmen.kotlinmovie.detail
 
+import com.nrohmen.kotlinmovie.api.VideoResponse
 import com.nrohmen.kotlinmovie.models.MovieDetail
 import rx.Observable
 
@@ -8,4 +9,5 @@ import rx.Observable
  */
 interface DetailInteractor {
     fun getMovieDetails(id: String): Observable<MovieDetail>
+    fun getMovieVideos(id: String): Observable<VideoResponse>
 }

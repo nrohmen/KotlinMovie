@@ -15,4 +15,7 @@ interface MovieDbApi {
 
     @GET("movie/{movie_id}")
     fun getMovieDetails(@Path("movie_id") id: String, @QueryMap map: Map<String, String>): Observable<MovieDetail>
+
+    @GET("movie/{movie_id}/videos")
+    fun getMovieVideos(@Path("movie_id") id: String): Observable<VideoResponse>
 }

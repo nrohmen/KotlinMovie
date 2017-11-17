@@ -47,6 +47,7 @@ class MainFragment : Fragment(), MainView {
     }
 
     override fun showDiscoverMovies(movies: List<Movie>?) {
+        progress_bar.visibility = View.GONE
         (list_movie.adapter as MainAdapter).addMovies(movies)
     }
 }

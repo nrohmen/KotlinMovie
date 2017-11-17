@@ -9,12 +9,12 @@
     android:paddingRight="10dp">
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_favorite"
+        android:id="@+id/watch_trailer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp"
-        app:srcCompat="@drawable/ic_favorite_border"
+        android:layout_margin="10dp"
+        app:srcCompat="@drawable/ic_ondemand_video"
         android:layout_alignParentRight="true" />
 
 </RelativeLayout>
