@@ -1,5 +1,6 @@
 package com.nrohmen.kotlinmovie.api
 
+import com.nrohmen.kotlinmovie.BuildConfig
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -13,7 +14,7 @@ import javax.inject.Singleton
         class ApiModule{
     @Provides @Singleton @Named("baseUrl")
     fun provideBaeUrl(): String{
-        return "http://api.themoviedb.org/3/"
+        return BuildConfig.BASE_URL
     }
 
     @Provides @Singleton
