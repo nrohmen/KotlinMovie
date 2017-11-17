@@ -8,11 +8,18 @@ import com.google.gson.annotations.SerializedName
  * Created by root on 11/15/17.
  */
 class MovieDetail(
-        @SerializedName("backdrop_path") val posterPath: String,
+        @SerializedName("backdrop_path")
+        val posterPath: String,
         val id: String,
         val overview: String,
         val title: String,
-        val voteAverage: Double) : Parcelable {
+        @SerializedName("vote_average")
+        val voteAverage: Double,
+        @SerializedName("vote_count")
+        val voteCount: Int,
+        @SerializedName("release_date")
+        val releaseDate: String,
+        val runtime: Int) : Parcelable {
 
 
     companion object {
@@ -29,7 +36,10 @@ class MovieDetail(
             source.readString(),
             source.readString(),
             source.readString(),
-            source.readDouble())
+            source.readDouble(),
+            source.readInt(),
+            source.readString(),
+            source.readInt())
 
     override fun describeContents() = 0
 
@@ -39,6 +49,9 @@ class MovieDetail(
         dest?.writeString(posterPath)
         dest?.writeString(title)
         dest?.writeDouble(voteAverage)
+        dest?.writeInt(voteCount)
+        dest?.writeString(releaseDate)
+        dest?.writeInt(runtime)
     }
 
     fun getPosterUrl(): String

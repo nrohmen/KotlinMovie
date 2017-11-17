@@ -27,6 +27,7 @@
         android:layout_height="48dp"
         android:layout_gravity="bottom"
         android:gravity="center"
+        android:fontFamily="@font/roboto_light"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:textColor="@android:color/white"

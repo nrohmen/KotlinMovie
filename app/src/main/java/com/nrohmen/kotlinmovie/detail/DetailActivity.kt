@@ -2,6 +2,7 @@ package com.nrohmen.kotlinmovie.detail
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import com.bumptech.glide.Glide
@@ -29,12 +30,21 @@ class DetailActivity : AppCompatActivity(), DetailView {
     private fun setupToolbar(){
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        collapsingToolbar.setExpandedTitleMargin(50, 50, 250, 50)
     }
 
     override fun showDiscoverMovies(movies: MovieDetail?) {
+        val rateAvg = movies?.voteAverage?.div(2)
         progress_bar.visibility = View.GONE
         collapsingToolbar.title = movies?.title
         overview?.text = movies?.overview
+        rate?.text = movies?.voteAverage.toString()
+        vote_count?.text = movies?.voteCount.toString()
+        release_date?.text = movies?.releaseDate
+        runtime?.text = movies?.runtime.toString()
+        if (rateAvg != null) {
+            rating_bar.rating = rateAvg.toFloat()
+        }
         Glide.with(this)
                 .load(movies?.getPosterUrl())
                 .into(poster)

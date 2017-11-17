@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="50dp"
     android:background="@android:color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -25,14 +26,88 @@
             android:padding="16dp"
             android:orientation="vertical">
 
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+
+               <RelativeLayout
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:id="@+id/rate"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textSize="40sp"
+                       tools:fontFamily="@font/roboto_thin"
+                       tools:text="7.3" />
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_toRightOf="@+id/rate"
+                       android:layout_toEndOf="@+id/rate"
+                       android:layout_centerVertical="true"
+                       android:layout_marginStart="10dp"
+                       android:orientation="vertical"
+                       android:layout_marginLeft="10dp">
+
+                       <RatingBar
+                           style="?android:attr/ratingBarStyleSmall"
+                           android:theme="@style/RatingBar"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:id="@+id/rating_bar"
+                           android:layout_gravity="center_horizontal"
+                           android:numStars="5"
+                           android:rating="5"
+                           android:hapticFeedbackEnabled="false"/>
+
+                       <TextView
+                           android:id="@+id/vote_count"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           tools:text="2930"/>
+
+                   </LinearLayout>
+               </RelativeLayout>
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:gravity="center_vertical"
+                   android:orientation="vertical"
+                   android:layout_weight="1">
+
+                   <TextView
+                       android:id="@+id/runtime"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="end"
+                       tools:text="120 Minutes"/>
+
+                   <TextView
+                       android:id="@+id/release_date"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:gravity="end"
+                       tools:text="22 Nov 2017"/>
+
+               </LinearLayout>
+
+           </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_light"
                 android:paddingBottom="5dp"
                 android:text="@string/story_line"
-                android:textSize="18sp"
-                android:textColor="@color/colorPrimaryText"/>
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="18sp" />
 
             <View
                 android:layout_width="20dp"
@@ -40,12 +115,13 @@
                 android:background="@color/colorPrimary"/>
 
             <TextView
+                android:id="@+id/overview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/overview"
                 android:layout_marginTop="10dp"
-                android:textSize="16sp"
-                android:textColor="@color/colorSecondaryText"/>
+                android:fontFamily="@font/roboto_light"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
