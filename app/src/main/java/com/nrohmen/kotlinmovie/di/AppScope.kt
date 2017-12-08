@@ -1,4 +1,4 @@
-package com.nrohmen.kotlinmovie.component
+package com.nrohmen.kotlinmovie.di
 
 import javax.inject.Scope
 

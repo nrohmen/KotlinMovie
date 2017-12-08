@@ -1,4 +1,4 @@
-package com.nrohmen.kotlinmovie.component
+package com.nrohmen.kotlinmovie.di
 
 import android.app.Application
 import android.content.Context

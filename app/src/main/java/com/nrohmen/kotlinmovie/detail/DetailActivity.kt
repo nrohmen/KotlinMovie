@@ -3,24 +3,24 @@ package com.nrohmen.kotlinmovie.detail
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.text.SpannableString
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.getkeepsafe.taptargetview.TapTarget
+import com.getkeepsafe.taptargetview.TapTargetView
 import com.nrohmen.kotlinmovie.BuildConfig
 import com.nrohmen.kotlinmovie.R
-import com.nrohmen.kotlinmovie.api.VideoResponse
-import com.nrohmen.kotlinmovie.component.App
-import com.nrohmen.kotlinmovie.main.MainAdapter
+import com.nrohmen.kotlinmovie.App
 import com.nrohmen.kotlinmovie.models.MovieDetail
 import com.nrohmen.kotlinmovie.models.Videos
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_overview.*
-import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.movie_wrapper.*
 import javax.inject.Inject
 
@@ -36,17 +36,19 @@ class DetailActivity : AppCompatActivity(), DetailView {
         setupToolbar()
         initLayout()
         presenter.setView(this, id)
+
+        (this.applicationContext as App).welcoming(this, watch_trailer, "Trailer!", "Tap to watch the movie trailer")
     }
 
     private fun setupToolbar(){
-        setSupportActionBar(toolbar)
+        setSupportActionBar(appbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         collapsingToolbar.setExpandedTitleMargin(50, 50, 250, 50)
     }
 
     override fun showMovieDetails(movies: MovieDetail?) {
         val rateAvg = movies?.voteAverage?.div(2)
-        progress_bar.visibility = View.GONE
+        loading.visibility = View.GONE
         collapsingToolbar.title = movies?.title
         overview?.text = movies?.overview
         rate?.text = movies?.voteAverage.toString()

@@ -15,7 +15,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "YOUTUBE", "\"https://youtube.com/watch?v=\""
         buildConfigField "String", "BASE_URL", "\"http://api.themoviedb.org/3/\""
-        buildConfigField "String", "TMDB_API_KEY", "API_KEY"
+        buildConfigField "String", "TMDB_API_KEY", "\"b9c08f4edc9ec157a61ce3f0a689f5f5\""
     }
     buildTypes {
         release {
@@ -26,7 +26,7 @@ android {
 }
 
 ext {
-    support_lib_version = '27.0.0'
+    support_lib_version = '27.0.2'
     dagger_version = '2.5'
     retrofitVersion = '2.3.0'
 }
@@ -60,10 +60,12 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:4.3.1"
 
     // DI
-    implementation 'com.android.support:support-v4:27.0.0'
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "com.google.dagger:dagger:$dagger_version"
     provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    //other
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.10.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

@@ -1,7 +1,7 @@
 package com.nrohmen.kotlinmovie.detail
 
 import com.nrohmen.kotlinmovie.api.MovieDbApi
-import com.nrohmen.kotlinmovie.component.AppScope
+import com.nrohmen.kotlinmovie.di.AppScope
 import dagger.Module
 import dagger.Provides
 

@@ -1,4 +1,4 @@
-package com.nrohmen.kotlinmovie.main
+package com.nrohmen.kotlinmovie.movie
 
 import android.content.Context
 import android.content.Intent
@@ -17,7 +17,7 @@ import java.util.*
 /**
  * Created by root on 11/15/17.
  */
-class MainAdapter(private val context: Context?) : RecyclerView.Adapter<MainAdapter.ViewHolder>(){
+class MovieAdapter(private val context: Context?) : RecyclerView.Adapter<MovieAdapter.ViewHolder>(){
     private var movies: List<Movie> = ArrayList()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

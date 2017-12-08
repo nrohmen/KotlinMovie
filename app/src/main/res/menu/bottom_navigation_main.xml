@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/playing"
+        android:enabled="true"
+        android:icon="@drawable/ic_play_circle_filled"
+        android:title="@string/now_playing"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/upcoming"
+        android:enabled="true"
+        android:icon="@drawable/ic_airplay"
+        android:title="@string/upcoming"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/popular"
+        android:enabled="true"
+        android:icon="@drawable/ic_stars"
+        android:title="@string/popular"
+        app:showAsAction="ifRoom" />
+</menu>

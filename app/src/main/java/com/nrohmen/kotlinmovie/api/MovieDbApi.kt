@@ -10,8 +10,14 @@ import rx.Observable
  * Created by root on 11/15/17.
  */
 interface MovieDbApi {
-    @GET("discover/movie")
-    fun getDiscoverMovie(@QueryMap map : Map<String, String>): Observable<MovieResponse>
+    @GET("movie/now_playing")
+    fun getNowPlayingMovie(@QueryMap map : Map<String, String>): Observable<MovieResponse>
+
+    @GET("movie/upcoming")
+    fun getUpcomingMovie(@QueryMap map : Map<String, String>): Observable<MovieResponse>
+
+    @GET("movie/popular")
+    fun getPopularMovie(@QueryMap map : Map<String, String>): Observable<MovieResponse>
 
     @GET("movie/{movie_id}")
     fun getMovieDetails(@Path("movie_id") id: String, @QueryMap map: Map<String, String>): Observable<MovieDetail>
