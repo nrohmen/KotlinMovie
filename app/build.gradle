@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.nrohmen.kotlinmovie"
         minSdkVersion 16
@@ -26,7 +26,7 @@ android {
 }
 
 ext {
-    support_lib_version = '27.0.2'
+    support_lib_version = '27.1.1'
     dagger_version = '2.5'
     retrofitVersion = '2.3.0'
 }
@@ -42,7 +42,7 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$support_lib_version"
     implementation "com.android.support:design:${support_lib_version}"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation "com.android.support:recyclerview-v7:${support_lib_version}"
     implementation "com.android.support:palette-v7:${support_lib_version}"
 
@@ -53,16 +53,16 @@ dependencies {
     // Network
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
 
     // Glide
-    implementation "com.github.bumptech.glide:glide:4.3.1"
+    implementation "com.github.bumptech.glide:glide:4.6.1"
 
     // DI
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "com.google.dagger:dagger:$dagger_version"
-    provided 'org.glassfish:javax.annotation:10.0-b28'
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
 
     //other
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.10.0'

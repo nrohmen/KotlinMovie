@@ -7,7 +7,7 @@ import rx.Observable
 /**
  * Created by root on 11/15/17.
  */
-class MovieInteractorImpl(val movieDbApi: MovieDbApi): MovieInteractor {
+class MovieInteractorImpl(private val movieDbApi: MovieDbApi): MovieInteractor {
     override fun getUpcomingMovies(): Observable<MovieResponse> {
         return movieDbApi.getUpcomingMovie(createQueryMap())
     }

@@ -6,7 +6,7 @@ import com.nrohmen.kotlinmovie.models.Movie
 /**
  * Created by root on 11/15/17.
  */
-class MovieResponse {
+data class MovieResponse (
     @SerializedName("results")
-    lateinit var movies: List<Movie>
-}
+    var movies: List<Movie>
+)

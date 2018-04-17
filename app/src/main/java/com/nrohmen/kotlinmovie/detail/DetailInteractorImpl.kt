@@ -8,7 +8,7 @@ import rx.Observable
 /**
  * Created by root on 11/15/17.
  */
-class DetailInteractorImpl(val movieDbApi: MovieDbApi): DetailInteractor{
+class DetailInteractorImpl(private val movieDbApi: MovieDbApi): DetailInteractor{
     override fun getMovieVideos(id: String): Observable<VideoResponse> {
         return movieDbApi.getMovieVideos(id)
     }

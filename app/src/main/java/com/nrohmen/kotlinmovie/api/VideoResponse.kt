@@ -6,7 +6,7 @@ import com.nrohmen.kotlinmovie.models.Videos
 /**
  * Created by root on 11/15/17.
  */
-class VideoResponse {
+data class VideoResponse (
     @SerializedName("results")
-    lateinit var videos: List<Videos>
-}
+    var videos: List<Videos>
+)

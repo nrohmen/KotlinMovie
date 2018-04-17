@@ -28,8 +28,8 @@ class MovieAdapter(private val context: Context?) : RecyclerView.Adapter<MovieAd
         return movies.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
-        val root = (LayoutInflater.from(parent?.context).inflate(R.layout.item_movie, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val root = (LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false))
         return ViewHolder(root)
     }
 
@@ -45,7 +45,7 @@ class MovieAdapter(private val context: Context?) : RecyclerView.Adapter<MovieAd
             itemView?.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) {
                     val intent = Intent(context, DetailActivity::class.java)
-                    intent.putExtra("id", movies.get(adapterPosition).id)
+                    intent.putExtra("id", movies[adapterPosition].id)
                     context?.let { it1 -> startActivity(it1, intent, null) }
                 }
             }

@@ -8,7 +8,7 @@ import android.support.v4.graphics.drawable.DrawableCompat
 
 object Utils {
 
-    private val PREFERENCES_FILE = "settings"
+    private const val PREFERENCES_FILE = "settings"
 
     fun readSharedSetting(ctx: Context, settingName: String, defaultValue: String): String? {
         val sharedPref = ctx.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE)

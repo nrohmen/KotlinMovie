@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by root on 11/15/17.
  */
-class Movie(
+data class Movie(
         @SerializedName("poster_path") val posterPath: String,
         val id: String,
         val title: String)  {

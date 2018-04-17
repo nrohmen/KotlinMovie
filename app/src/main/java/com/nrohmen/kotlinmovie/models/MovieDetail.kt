@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by root on 11/15/17.
  */
-class MovieDetail(
+data class MovieDetail(
         @SerializedName("backdrop_path")
-        val posterPath: String,
+        private val posterPath: String,
         val id: String,
         val overview: String,
         val title: String,

@@ -10,7 +10,7 @@ import rx.schedulers.Schedulers
 /**
  * Created by root on 11/15/17.
  */
-class NowPlayingPresenterImpl(val interactor: MovieInteractor, private var view: NowPlayingView?): NowPlayingPresenter {
+class NowPlayingPresenterImpl(private val interactor: MovieInteractor, private var view: NowPlayingView?): NowPlayingPresenter {
 
     override fun setView(nowPlayingView: NowPlayingView) {
         view = nowPlayingView

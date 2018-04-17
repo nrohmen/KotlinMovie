@@ -9,7 +9,7 @@ import dagger.Subcomponent
  * Created by root on 11/15/17.
  */
 @AppScope
-@Subcomponent(modules = arrayOf(MovieModule::class))
+@Subcomponent(modules = [(MovieModule::class)])
 interface MovieComponent {
     fun inject(target: NowPlayingFragment)
     fun inject(target: UpcomingFragment)

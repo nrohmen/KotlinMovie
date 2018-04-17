@@ -7,7 +7,7 @@ import dagger.Subcomponent
  * Created by root on 11/16/17.
  */
 @AppScope
-@Subcomponent(modules = arrayOf(DetailModule::class))
+@Subcomponent(modules = [(DetailModule::class)])
 interface DetailComponent {
     fun inject(target: DetailActivity)
 }
