@@ -1,6 +1,6 @@
 package com.nrohmen.kotlinmovie.movie
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan

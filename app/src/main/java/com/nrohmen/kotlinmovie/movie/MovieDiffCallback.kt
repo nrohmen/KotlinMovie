@@ -1,6 +1,6 @@
 package com.nrohmen.kotlinmovie.movie
 
-import android.support.v7.util.DiffUtil
+import androidx.recyclerview.widget.DiffUtil
 import com.nrohmen.kotlinmovie.models.Movie
 
 class MovieDiffCallback : DiffUtil.ItemCallback<Movie>() {
