@@ -3,6 +3,7 @@ package com.nrohmen.kotlinmovie.movie
 import android.content.Context
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
+import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -12,20 +13,23 @@ import com.nrohmen.kotlinmovie.R
 import com.nrohmen.kotlinmovie.detail.DetailActivity
 import com.nrohmen.kotlinmovie.models.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
-import java.util.*
 
 /**
  * Created by root on 11/15/17.
  */
-class MovieAdapter(private val context: Context?) : RecyclerView.Adapter<MovieAdapter.ViewHolder>(){
-    private var movies: List<Movie> = ArrayList()
+class MovieAdapter(private val context: Context?) : ListAdapter<Movie, MovieAdapter.ViewHolder>(
+        MovieDiffCallback()
+) {
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(movies[position])
+    override fun submitList(list: List<Movie>?) {
+        if (list != null) {
+            notifyDataSetChanged()
+        }
+        super.submitList(list)
     }
 
-    override fun getItemCount(): Int {
-        return movies.size
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(getItem(position))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,19 +37,13 @@ class MovieAdapter(private val context: Context?) : RecyclerView.Adapter<MovieAd
         return ViewHolder(root)
     }
 
-    fun addMovies(movies: List<Movie>?) {
-        if (movies != null) {
-            this.movies = movies
-            notifyDataSetChanged()
-        }
-    }
-
     inner class ViewHolder(root: View) : RecyclerView.ViewHolder(root) {
+
         init {
             itemView?.setOnClickListener {
                 if (adapterPosition != RecyclerView.NO_POSITION) {
                     val intent = Intent(context, DetailActivity::class.java)
-                    intent.putExtra("id", movies[adapterPosition].id)
+                    intent.putExtra("id", getItem(adapterPosition).id)
                     context?.let { it1 -> startActivity(it1, intent, null) }
                 }
             }

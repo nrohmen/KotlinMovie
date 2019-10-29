@@ -6,8 +6,8 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.nrohmen.kotlinmovie.R
 import com.nrohmen.kotlinmovie.App
+import com.nrohmen.kotlinmovie.R
 import com.nrohmen.kotlinmovie.models.Movie
 import com.nrohmen.kotlinmovie.movie.MovieAdapter
 import kotlinx.android.synthetic.main.fragment_now_playing.*
@@ -15,7 +15,8 @@ import javax.inject.Inject
 
 class UpcomingFragment : Fragment(), UpcomingView {
 
-    @Inject lateinit var presenter: UpcomingPresenter
+    @Inject
+    lateinit var presenter: UpcomingPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +50,6 @@ class UpcomingFragment : Fragment(), UpcomingView {
 
     override fun showUpcomingMovies(movies: List<Movie>?) {
         progress_bar.visibility = View.GONE
-        (list_movie.adapter as MovieAdapter).addMovies(movies)
+        (list_movie.adapter as MovieAdapter).submitList(movies)
     }
 }
